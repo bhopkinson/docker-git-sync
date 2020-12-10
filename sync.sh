@@ -3,6 +3,7 @@
 source /etc/sync_env
 
 SYNC_DIR="/sync-dir"
+GIT_CRYPT_DIR="/git-crypt"
 
 function die {
     echo >&2 "$@"
@@ -34,6 +35,10 @@ elif [ ! -d "$SYNC_DIR/.git" ]; then
 fi
 
 cd "${SYNC_DIR}"
+
+if [ -z "${GIT_CRYPT_KEYFILE}" ]; then
+  git-crypt unlock $GIT_CRYPT_DIR/${GIT_CRYPT_KEYFILE}
+fi
 
 git pull origin "${GIT_REPO_BRANCH}" || die "git pull failed"
 
