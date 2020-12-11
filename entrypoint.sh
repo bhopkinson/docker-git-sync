@@ -38,6 +38,7 @@ echo "GIT_USER_NAME=${GIT_USER_NAME}" >> /etc/sync_env
 echo "GIT_USER_EMAIL=${GIT_USER_EMAIL}" >> /etc/sync_env
 echo "GIT_REPO_URL=${GIT_REPO_URL}" >> /etc/sync_env
 echo "GIT_REPO_BRANCH=${GIT_REPO_BRANCH}" >> /etc/sync_env
+echo "GIT_CRYPT_KEYFILE=${GIT_CRYPT_KEYFILE}" >> /etc/sync_env
 
 # CRON_TIME can be set via environment
 # If not defined, the default is every minute
